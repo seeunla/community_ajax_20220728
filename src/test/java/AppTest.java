@@ -12,6 +12,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest {
     @Test
+    void mapOf() {
+        Map<String, Object> map = Ut.mapOf("age", 11, "name", "Paul");
+
+        assertThat(map.get("age")).isEqualTo(11);
+        assertThat(map.get("name")).isEqualTo("Paul");
+    }
+    @Test
     void 실험_assertThat() {
         int rs = 10+20;
         assertThat(rs).isEqualTo(30);
