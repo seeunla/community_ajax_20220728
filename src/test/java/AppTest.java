@@ -23,11 +23,11 @@ public class AppTest {
     }
 
     @Test
-    void ObjectMapper__jsonStrToObj() throws JsonProcessingException {
+    void ObjectMapper__jsonStrToObj() {
         ArticleDto articleDtoOrigin = new ArticleDto(1, "제목", "내용");
         String jsonStr = Ut.json.toJonStr(articleDtoOrigin, "");
 
-        ArticleDto articleDtoFromJson = (ArticleDto) Ut.json.toObj(jsonStr, ArticleDto.class, null);
+        ArticleDto articleDtoFromJson = Ut.json.toObj(jsonStr, ArticleDto.class, null);
 
         assertThat(articleDtoOrigin).isEqualTo(articleDtoFromJson);
     }
