@@ -3,10 +3,6 @@ package com.ll.exam.util;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ll.exam.article.dto.ArticleDto;
-
-import java.util.List;
-import java.util.Map;
 
 public class Ut {
     public static class json {
@@ -16,7 +12,7 @@ public class Ut {
             om = new ObjectMapper();
         }
 
-        public static String toJsonStr(Object obj, String defaultValue) {
+        public static String toStr(Object obj, String defaultValue) {
             try {
                 return om.writeValueAsString(obj);
             } catch (JsonProcessingException e) {
