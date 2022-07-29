@@ -28,10 +28,14 @@
                 fetch('/usr/article/getArticles/free')
                     .then(data => data.json())
                     .then(responseData => {
-                        console.log(responseData);
+                        const articleList = responseData.data;
+                        const lastestArticle = articleList[articleList.length - 1];
+                        const content = new Date() + " : " + lastestArticle.title + "<br />";
 
                         //jquery 찾기 : $
-                        $('.place-1').append(responseData.resultCode + "<br />");
+                        // $('.place-1').append(content);
+                        //$('.place-1').prepend(content);
+                        $('.place-1').empty().prepend(content);
                     });
             }
         </script>
