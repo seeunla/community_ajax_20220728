@@ -40,6 +40,8 @@ public class AppTest {
         articleDtos.add(new ArticleDto(1, "제목", "내용"));
         articleDtos.add(new ArticleDto(2, "제목2", "내용2"));
 
+        System.out.println(articleDtos);
+
         String jsonStr = Ut.json.toStr(articleDtos, "");
         assertThat(jsonStr).isEqualTo("""
                 [{"id":1,"title":"제목","body":"내용"},{"id":2,"title":"제목2","body":"내용2"}]
@@ -63,6 +65,7 @@ public class AppTest {
         String jsonStr = Ut.json.toStr(articleDtoOrigin, "");
 
         ArticleDto articleDtoFromJson = Ut.json.toObj(jsonStr, ArticleDto.class, null);
+        System.out.println(articleDtoFromJson);
 
         assertThat(articleDtoOrigin).isEqualTo(articleDtoFromJson);
     }

@@ -58,7 +58,6 @@ public class Ut {
             } catch (JsonProcessingException e) {
                 return defaultValue;
             }
-
         }
     }
 }
