@@ -27,4 +27,8 @@ public class ChatService {
         chatRoomRepository.modify(id, title, body);
 
     }
+
+    public void deleteRoom(long id) {
+        chatRoomRepository.deleteRoom(id);
+    }
 }
