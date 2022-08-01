@@ -35,18 +35,16 @@
     let ChatMessages__lastId = 0;
 
     function ChatMessages__remove(id) {
-        $.post(
-            `/usr/chat/deleteMessageAjax/\${id}`, // 주소, action
-            {
-                _method: "DELETE"
-            },
-            function (data) { // 콜백 메서드, 통신이 완료된 후, 실행
+        $.ajax({
+            url: `/usr/chat/deleteMessageAjax/\${id}`, // 주소, action
+            type: "DELETE",
+            success: function (data) { // 콜백 메서드, 통신이 완료된 후, 실행
                 if (data.msg) {
                     alert(data.msg);
                 }
             },
-            'json' // 받은 데이터를 json 으로 해석 하겠다.
-        );
+            dataType: 'json' // 받은 데이터를 json 으로 해석 하겠다.
+    });
     }
 
     function ChatMessages__loadMore() {
